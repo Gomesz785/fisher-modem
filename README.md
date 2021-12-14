@@ -1,10 +1,10 @@
-#FisherSoftModem v1.0
+# FisherSoftModem v1.0 #
 
-##What is this?
+## What is this? ##
 
 This is a rewrite of Dr. Tony Fisher's software modem for Linux. All the functionality of the original software modem has been ported and several more features have been added.
 
-##About Tony Fisher
+## About Tony Fisher ##
 
 Tony Fisher was a professor of computer science at York University where he taught courses on embedded microcomputer systems design, digital signal processing, and data communications. Unfortunately, he died at age 43 from cancer. A tribute to Tony Fisher can be found here:
 
@@ -16,11 +16,11 @@ The original source may be found here:
 
 A cached copy of the above URLs are found in the 'fisher' directory in case they disappear from the internet.
 
-##Prereqs
+## Prereqs ##
 
 sudo apt-get install libbluetooth-dev
 
-##What's Changed
+## What's Changed ##
 
 For those familiar with Dr. Fisher's original software modem project, here is a summary of what has changed:
 
@@ -43,13 +43,13 @@ For those familiar with Dr. Fisher's original software modem project, here is a 
 
 * Some of the support programs (fifi/mkfilter/mkshape) were modified slightly to help with the build process.
 
-##What Works
+## What Works ##
 
 * V.21 originate/answer modes, 300 bps full duplex
 * V.23 originate/answer modes, 1200 bps down, 75 bps up
 * V.29 fax send/receive at 9600 bps
 
-##What Doesn't Work
+## What Doesn't Work ##
 
 * V.32 originate
 
@@ -69,7 +69,7 @@ You can:
 
 * (Possibly) establish a point to point link between a computer and a real modem using a sound card.  This is tricky since getting a computer to play to a phone line and record from a phone line is difficult.  I have been successful with V21 and V23 modes.
 
-##AT Command Set
+## AT Command Set ##
 
 As mentioned earlier, the command line flags were removed and replaced with a small subset of Hayes commands. Only some very basic AT commands are supported.
 
@@ -102,13 +102,13 @@ As mentioned earlier, the command line flags were removed and replaced with a sm
              0 = don't use v8
              1 = use v8
 
-###NOTES
+### NOTES ###
 
 1. There is no 'auto' mode like on real modems.  You must set the mode you want to use for the session and the other end must match (or be capable of falling back to your mode).
 
 2. There is no carrier detection so if the other end disappears after having established a connection, the modem will remain in originate/answer mode and spit out garbage until you hang up.
 
-##Experimental Modes
+## Experimental Modes ##
 
 A sound card's output does not feedback into its input like a real phone line.  This means we don't have to worry about things like echo cancellation or making sure the send frequencies are not shared by the receiving frequencies.
 
@@ -118,7 +118,7 @@ Mode 98 uses the same QAM modulation for the 9600 bps half duplex fax mode but u
 
 These modes would not work over a phone line but might work across a soundcard connection, for example.
 
-##Fax
+##Fax ##
 
 Sending and receiving a fax works. You can test this locally by using the shared mem pipe device.  The code is currently hard coded to send the fax located in doc/TestFax.g3 and receive it as ReceivedFax.g3 in the current directory.
 
