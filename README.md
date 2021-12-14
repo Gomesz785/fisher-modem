@@ -118,7 +118,7 @@ Mode 98 uses the same QAM modulation for the 9600 bps half duplex fax mode but u
 
 These modes would not work over a phone line but might work across a soundcard connection, for example.
 
-##Fax ##
+## Fax ##
 
 Sending and receiving a fax works. You can test this locally by using the shared mem pipe device.  The code is currently hard coded to send the fax located in doc/TestFax.g3 and receive it as ReceivedFax.g3 in the current directory.
 
